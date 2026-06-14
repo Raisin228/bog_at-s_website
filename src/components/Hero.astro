@@ -5,23 +5,30 @@
   <div class="hero-bg" aria-hidden="true"></div>
 
   <div class="container hero-content">
-    <p class="hero-eyebrow">Python · AI/ML Инженер</p>
+    <p class="hero-meta">★ На основе вашего поиска: <em>идеальный инженер</em></p>
+
     <h1 class="hero-name">Богдан<br />Атрошенко</h1>
-    <p class="hero-tagline">
-      Проектирую RAG-системы и мультиагентные пайплайны.<br class="br-desktop" />
-      Превращаю сложные задачи в работающие решения.
+
+    <ul class="hero-genres" aria-label="Специализации">
+      <li>Python</li>
+      <li>AI/ML</li>
+      <li>RAG</li>
+      <li>FastAPI</li>
+    </ul>
+
+    <p class="hero-tagline">Проектирует системы, которые думают</p>
+
+    <p class="hero-rating">
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <strong>9.8 / 10</strong>
+      <span class="rating-source">по версии ICPC</span>
     </p>
+
     <div class="hero-cta">
-      <a class="btn btn--primary" href="#projects">Проекты</a>
-      <a class="btn btn--outline" href="#contacts">Написать мне</a>
+      <a class="btn btn--primary" href="#shelf-ai">▶ Подробнее</a>
+      <button id="hire-btn" class="btn btn--outline">+ Добавить в команду</button>
     </div>
   </div>
-
-  <a class="scroll-hint" href="#about" aria-label="Листать вниз">
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M12 5v14M5 12l7 7 7-7"></path>
-    </svg>
-  </a>
 </section>
 
 <style>
@@ -33,83 +40,137 @@
     overflow: hidden;
   }
 
-  /* gradient background mesh */
   .hero-bg {
     position: absolute;
     inset: 0;
     z-index: 0;
     background:
-      radial-gradient(ellipse 60% 50% at 70% 30%, var(--accent-glow), transparent),
-      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(var(--accent-rgb), 0.06), transparent);
+      radial-gradient(ellipse 55% 65% at 85% 15%, rgba(var(--accent-rgb), 0.14), transparent),
+      radial-gradient(ellipse 40% 50% at 10% 85%, rgba(var(--accent-rgb), 0.07), transparent);
     pointer-events: none;
   }
 
   .hero-content {
     position: relative;
     z-index: 1;
-    padding-top: 100px;
+    padding-top: 110px;
     padding-bottom: 80px;
+    max-width: 700px;
   }
 
-  .hero-eyebrow {
+  .hero-meta {
     font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--muted);
+    margin-bottom: 28px;
+    letter-spacing: 0.04em;
+    animation: fade-up 0.6s ease 0.1s both;
+  }
+
+  .hero-meta em {
     color: var(--accent);
-    margin-bottom: 24px;
-    animation: fade-up 0.7s ease 0.1s both;
+    font-style: normal;
   }
 
   .hero-name {
     font-family: 'Syne', sans-serif;
-    font-size: clamp(3.2rem, 9vw, 7.5rem);
+    font-size: clamp(3.2rem, 9vw, 6.5rem);
     font-weight: 700;
     letter-spacing: -0.03em;
-    line-height: 1;
+    line-height: 0.95;
     color: var(--text);
-    margin-bottom: 28px;
-    animation: fade-up 0.8s ease 0.2s both;
+    margin-bottom: 32px;
+    animation: fade-up 0.7s ease 0.2s both;
+  }
+
+  .hero-genres {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    animation: fade-up 0.7s ease 0.3s both;
+  }
+
+  .hero-genres li {
+    padding: 4px 14px;
+    border: 1px solid var(--border-strong);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.05em;
   }
 
   .hero-tagline {
-    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
     color: var(--muted);
-    line-height: 1.65;
-    max-width: 500px;
-    margin-bottom: 44px;
-    animation: fade-up 0.8s ease 0.35s both;
+    line-height: 1.5;
+    margin-bottom: 18px;
+    animation: fade-up 0.7s ease 0.35s both;
   }
 
-  .br-desktop { display: none; }
+  .hero-rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 44px;
+    animation: fade-up 0.7s ease 0.42s both;
+  }
+
+  .stars {
+    color: #F5C518;
+    letter-spacing: 2px;
+    font-size: 0.95rem;
+  }
+
+  .hero-rating strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .rating-source {
+    font-size: 0.72rem;
+    opacity: 0.55;
+  }
 
   .hero-cta {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    animation: fade-up 0.8s ease 0.5s both;
+    animation: fade-up 0.7s ease 0.5s both;
   }
 
-  .scroll-hint {
-    position: absolute;
-    bottom: 32px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    color: var(--muted);
-    opacity: 0.6;
-    animation: fade-in 1s ease 1.2s both, bob 2.4s ease-in-out 1.5s infinite;
-    transition: opacity 0.2s;
-  }
-
-  .scroll-hint:hover { opacity: 1; }
-
-  @keyframes bob {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(8px); }
-  }
-
-  @media (min-width: 768px) {
-    .br-desktop { display: block; }
+  @media (max-width: 480px) {
+    .hero-cta { flex-direction: column; }
+    .hero-cta .btn { justify-content: center; }
   }
 </style>
+
+<script>
+  const btn = document.getElementById('hire-btn');
+  const KEY = 'hired';
+
+  function updateBtn() {
+    if (!btn) return;
+    const hired = localStorage.getItem(KEY);
+    btn.textContent = hired ? '✓ В команде' : '+ Добавить в команду';
+    if (hired) {
+      btn.style.borderColor = 'var(--accent)';
+      btn.style.color = 'var(--accent)';
+    } else {
+      btn.style.borderColor = '';
+      btn.style.color = '';
+    }
+  }
+
+  updateBtn();
+
+  btn?.addEventListener('click', () => {
+    if (localStorage.getItem(KEY)) localStorage.removeItem(KEY);
+    else localStorage.setItem(KEY, '1');
+    updateBtn();
+  });
+</script>

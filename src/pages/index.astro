@@ -2,18 +2,75 @@
 import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
-import About from '../components/About.astro';
-import Projects from '../components/Projects.astro';
+import ShelfRow from '../components/ShelfRow.astro';
 import Contacts from '../components/Contacts.astro';
 import Footer from '../components/Footer.astro';
+
+const aiCards = [
+  {
+    title: 'Онбординг на RAG',
+    description: 'Корпоративный ассистент на LLM + FastAPI + PostgreSQL. Индексирует документы компании и отвечает на вопросы сотрудников.',
+    tags: ['LLM', 'FastAPI', 'PostgreSQL', 'RAG'],
+    visual: '⚡',
+  },
+  {
+    title: 'Анализатор IT-вакансий',
+    description: 'Мультиагентный парсер IT-рынка: собирает, анализирует и ранжирует вакансии под профиль кандидата.',
+    tags: ['Python', 'Redis', 'Celery', 'AI'],
+    visual: '🔍',
+  },
+  {
+    title: 'RAG-пайплайн',
+    description: 'Архитектура семантического поиска и генерации ответов на основе векторной базы. Точность выше классического поиска.',
+    tags: ['RAG', 'Vector DB', 'LLM', 'Python'],
+    visual: '🧠',
+  },
+];
+
+const backendCards = [
+  {
+    title: 'Соцсеть на FastAPI',
+    description: 'REST API: посты, лента, авторизация по JWT, Docker-окружение. Чистая архитектура, покрытие тестами.',
+    tags: ['FastAPI', 'PostgreSQL', 'JWT', 'Docker'],
+    visual: '🔗',
+  },
+  {
+    title: 'Стек на продакшн',
+    description: 'PostgreSQL + Redis + Celery + Docker — надёжная основа высоконагруженного сервиса с фоновыми задачами.',
+    tags: ['PostgreSQL', 'Redis', 'Celery', 'Docker'],
+    visual: '🗄️',
+  },
+  {
+    title: 'DevOps-паттерны',
+    description: 'CI/CD-пайплайны, конфигурация через env-файлы, деплой на VPS с Nginx и автообновлением сертификатов.',
+    tags: ['Docker', 'CI/CD', 'Linux', 'Nginx'],
+    visual: '⚙️',
+  },
+];
+
+const philosophyCards = [
+  {
+    title: 'Подход к сложным задачам',
+    description: '"If something is important enough, you should try even if the probable outcome is failure." — Elon Musk. Именно так — берусь за задачи, где успех не гарантирован.',
+    tags: ['Мышление', 'Риск', 'Подход'],
+    visual: '💡',
+  },
+  {
+    title: 'ICPC и хакатоны',
+    description: 'Международные соревнования по программированию. Алгоритмы, скорость решений и командная работа под давлением.',
+    tags: ['Алгоритмы', 'Олимпиады', 'Teamwork'],
+    visual: '🏆',
+  },
+];
 ---
 
 <Base>
   <Header />
   <main>
     <Hero />
-    <About />
-    <Projects />
+    <ShelfRow title="Если ищете AI/ML инженера" cards={aiCards} id="shelf-ai" />
+    <ShelfRow title="Если нужен надёжный бэкенд" cards={backendCards} id="shelf-backend" />
+    <ShelfRow title="Философия и мышление" cards={philosophyCards} id="shelf-philosophy" />
     <Contacts />
   </main>
   <Footer />

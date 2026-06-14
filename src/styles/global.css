@@ -1,8 +1,9 @@
 /* ─── Tokens ─────────────────────────────────────────────── */
 :root {
-  --bg: #F8F8F8;
+  --bg: #F0F0F0;
   --bg-card: #FFFFFF;
-  --text: #0C0C0C;
+  --bg-card-hover: #F8F8F8;
+  --text: #111111;
   --muted: #666666;
   --accent: #6D28D9;
   --accent-rgb: 109, 40, 217;
@@ -12,10 +13,11 @@
 }
 
 [data-theme='dark'] {
-  --bg: #0C0C0C;
-  --bg-card: #161616;
-  --text: #F2F2F2;
-  --muted: #888888;
+  --bg: #0A0A0A;
+  --bg-card: #181818;
+  --bg-card-hover: #242424;
+  --text: #FFFFFF;
+  --muted: #999999;
   --accent: #7C3AED;
   --accent-rgb: 124, 58, 237;
   --accent-glow: rgba(124, 58, 237, 0.16);
@@ -57,8 +59,6 @@ h1, h2, h3 {
   padding: 0 24px;
 }
 
-section { padding: 96px 0; }
-
 /* ─── Buttons ────────────────────────────────────────────── */
 .btn {
   display: inline-flex;
@@ -98,23 +98,6 @@ section { padding: 96px 0; }
   color: var(--accent);
 }
 
-/* ─── Section heading ────────────────────────────────────── */
-.section-label {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 12px;
-  display: block;
-}
-
-.section-title {
-  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
-  margin-bottom: 48px;
-}
-
 /* ─── Scroll reveal ──────────────────────────────────────── */
 .reveal {
   opacity: 0;
@@ -140,10 +123,6 @@ section { padding: 96px 0; }
 @keyframes fade-in {
   from { opacity: 0; }
   to   { opacity: 1; }
-}
-
-@keyframes spin-once {
-  to { transform: rotate(180deg); }
 }
 
 /* ─── Prefers reduced motion ─────────────────────────────── */

@@ -4,12 +4,6 @@
 <header class="header" id="site-header">
   <a class="logo" href="#top" aria-label="Богдан Атрошенко">Б·А</a>
 
-  <nav class="nav" aria-label="Навигация">
-    <a href="#about">Обо мне</a>
-    <a href="#projects">Проекты</a>
-    <a href="#contacts">Контакты</a>
-  </nav>
-
   <button id="theme-toggle" class="theme-btn" aria-label="Переключить тему">
     <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
       <circle cx="12" cy="12" r="4.2"></circle>
@@ -61,42 +55,6 @@
 
   .logo:hover { color: var(--accent); }
 
-  .nav {
-    display: flex;
-    gap: 32px;
-  }
-
-  .nav a {
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--muted);
-    position: relative;
-    padding-bottom: 2px;
-    transition: color 0.2s;
-  }
-
-  .nav a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: var(--accent);
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
-  }
-
-  .nav a:hover {
-    color: var(--text);
-  }
-
-  .nav a:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-
   .theme-btn {
     display: grid;
     place-items: center;
@@ -126,18 +84,7 @@
   :global([data-theme='dark'])  .icon-sun  { opacity: 0; transform: rotate(-90deg) scale(0.7); }
 
   @media (max-width: 640px) {
-    .header, .header.scrolled {
-      padding: 14px 20px;
-      flex-wrap: wrap;
-      row-gap: 4px;
-    }
-    .nav {
-      order: 3;
-      width: 100%;
-      gap: 20px;
-      justify-content: center;
-    }
-    .nav a { font-size: 0.78rem; }
+    .header, .header.scrolled { padding: 14px 20px; }
   }
 </style>
 

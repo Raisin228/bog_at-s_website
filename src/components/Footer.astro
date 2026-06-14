@@ -4,6 +4,7 @@
 <footer class="footer">
   <div class="container footer-inner">
     <p class="footer-copy">© 2026 Богдан Атрошенко</p>
+    <p class="footer-joke">bogdan.ai · рекомендовано алгоритмом</p>
     <a href="https://github.com/Raisin228" target="_blank" rel="noopener noreferrer" class="footer-github">
       GitHub ↗
     </a>
@@ -12,7 +13,7 @@
 
 <style>
   .footer {
-    padding: 32px 0;
+    padding: 28px 0;
     border-top: 1px solid var(--border);
   }
 
@@ -21,19 +22,32 @@
     align-items: center;
     justify-content: space-between;
     gap: 16px;
+    flex-wrap: wrap;
   }
 
   .footer-copy {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     color: var(--muted);
   }
 
+  .footer-joke {
+    font-size: 0.72rem;
+    color: var(--muted);
+    opacity: 0.45;
+    font-style: italic;
+    text-align: center;
+  }
+
   .footer-github {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     font-weight: 500;
     color: var(--muted);
     transition: color 0.2s;
   }
 
   .footer-github:hover { color: var(--accent); }
+
+  @media (max-width: 640px) {
+    .footer-joke { display: none; }
+  }
 </style>
