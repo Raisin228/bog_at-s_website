@@ -1,0 +1,123 @@
+---
+const links = [
+  { label: 'GitHub', value: 'Raisin228', href: 'https://github.com/Raisin228' },
+  { label: 'Telegram', value: '@скоро', href: '#' },
+  { label: 'Email', value: 'bogdanatrosenko@gmail.com', href: 'mailto:bogdanatrosenko@gmail.com' },
+];
+---
+
+<section id="contacts">
+  <div class="container">
+    <div class="contacts-inner">
+      <div class="contacts-text reveal">
+        <span class="section-label">Контакты</span>
+        <h2 class="section-title">Открыт к<br />интересным задачам</h2>
+        <p class="contacts-lead">
+          Работаю удалённо. Отвечаю быстро.
+        </p>
+      </div>
+
+      <ul class="links-list reveal" data-delay="1">
+        {links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              target={link.href.startsWith('http') ? '_blank' : undefined}
+              rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              class={link.href === '#' ? 'disabled' : ''}
+            >
+              <span class="link-label">{link.label}</span>
+              <span class="link-value">{link.value}</span>
+              <svg class="link-arrow" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 13L13 3M13 3H6M13 3v7"></path>
+              </svg>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contacts-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .contacts-lead {
+    color: var(--muted);
+    font-size: 1rem;
+    margin-top: -24px;
+  }
+
+  .links-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 80px;
+  }
+
+  .links-list a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+
+  .links-list a:not(.disabled):hover {
+    border-color: rgba(var(--accent-rgb), 0.35);
+    transform: translateX(4px);
+    box-shadow: 0 8px 24px var(--accent-glow);
+  }
+
+  .links-list a.disabled {
+    opacity: 0.4;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .link-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    min-width: 70px;
+  }
+
+  .link-value {
+    font-size: 0.9rem;
+    color: var(--muted);
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .link-arrow {
+    color: var(--muted);
+    flex-shrink: 0;
+    transition: transform 0.2s, color 0.2s;
+  }
+
+  .links-list a:not(.disabled):hover .link-arrow {
+    transform: translate(2px, -2px);
+    color: var(--accent);
+  }
+
+  @media (max-width: 768px) {
+    .contacts-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .links-list { padding-top: 0; }
+  }
+</style>

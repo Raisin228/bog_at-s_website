@@ -1,0 +1,132 @@
+---
+---
+
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="section-label reveal">Обо мне</span>
+        <h2 class="section-title reveal" data-delay="1">Инженер — философ нашего времени</h2>
+
+        <div class="bio reveal" data-delay="2">
+          <p>
+            Привет! Я Богдан — Python-разработчик с фокусом на AI/ML-инженерии.
+            Проектирую RAG-системы, мультиагентные пайплайны и надёжные бэкенды на FastAPI —
+            решения, которыми пользуются живые люди, а не только тесты.
+          </p>
+          <p>
+            Верю, что сначала нужно задать правильный вопрос, потом писать код.
+            Живу в Москве, работаю удалённо.
+            Участник ICPC, призёр хакатонов.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-photo reveal" data-delay="1" aria-hidden="true">
+        <div class="photo-placeholder">
+          <svg viewBox="0 0 100 120" fill="none">
+            <ellipse cx="50" cy="42" rx="22" ry="26" fill="var(--border-strong)"/>
+            <path d="M8 120 C8 84 92 84 92 120" fill="var(--border-strong)"/>
+          </svg>
+          <p>Фото скоро</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="skills reveal" data-delay="2">
+      <p class="skills-label">Стек</p>
+      <ul class="skills-list">
+        {[
+          'Python', 'FastAPI', 'PostgreSQL', 'Redis',
+          'Celery', 'Docker', 'Django', 'Pytest',
+          'LLM · RAG', 'Мультиагентные системы'
+        ].map((s) => <li>{s}</li>)}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 64px;
+    align-items: start;
+    margin-bottom: 64px;
+  }
+
+  .bio p {
+    color: var(--muted);
+    margin-bottom: 1em;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .bio p:last-child { margin-bottom: 0; }
+
+  .about-photo {
+    position: sticky;
+    top: 100px;
+  }
+
+  .photo-placeholder {
+    aspect-ratio: 3/4;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+
+  .photo-placeholder svg {
+    width: 80px;
+    opacity: 0.4;
+  }
+
+  .skills-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .skills-list li {
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .skills-list li:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .about-photo { position: static; order: -1; }
+    .photo-placeholder { aspect-ratio: 4/3; max-height: 220px; }
+  }
+</style>

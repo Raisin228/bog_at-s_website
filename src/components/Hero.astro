@@ -1,0 +1,115 @@
+---
+---
+
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true"></div>
+
+  <div class="container hero-content">
+    <p class="hero-eyebrow">Python · AI/ML Инженер</p>
+    <h1 class="hero-name">Богдан<br />Атрошенко</h1>
+    <p class="hero-tagline">
+      Проектирую RAG-системы и мультиагентные пайплайны.<br class="br-desktop" />
+      Превращаю сложные задачи в работающие решения.
+    </p>
+    <div class="hero-cta">
+      <a class="btn btn--primary" href="#projects">Проекты</a>
+      <a class="btn btn--outline" href="#contacts">Написать мне</a>
+    </div>
+  </div>
+
+  <a class="scroll-hint" href="#about" aria-label="Листать вниз">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14M5 12l7 7 7-7"></path>
+    </svg>
+  </a>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  /* gradient background mesh */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 70% 30%, var(--accent-glow), transparent),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(var(--accent-rgb), 0.06), transparent);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding-top: 100px;
+    padding-bottom: 80px;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    animation: fade-up 0.7s ease 0.1s both;
+  }
+
+  .hero-name {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(3.2rem, 9vw, 7.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    color: var(--text);
+    margin-bottom: 28px;
+    animation: fade-up 0.8s ease 0.2s both;
+  }
+
+  .hero-tagline {
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    color: var(--muted);
+    line-height: 1.65;
+    max-width: 500px;
+    margin-bottom: 44px;
+    animation: fade-up 0.8s ease 0.35s both;
+  }
+
+  .br-desktop { display: none; }
+
+  .hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    animation: fade-up 0.8s ease 0.5s both;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: var(--muted);
+    opacity: 0.6;
+    animation: fade-in 1s ease 1.2s both, bob 2.4s ease-in-out 1.5s infinite;
+    transition: opacity 0.2s;
+  }
+
+  .scroll-hint:hover { opacity: 1; }
+
+  @keyframes bob {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  @media (min-width: 768px) {
+    .br-desktop { display: block; }
+  }
+</style>
