@@ -1,0 +1,87 @@
+/* --- Glass Card --- */
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  box-shadow: var(--glass-shadow);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12), 0 0 20px rgba(160, 100, 255, 0.15);
+}
+
+/* --- macOS Chrome Dots --- */
+
+.macos-chrome {
+  display: flex;
+  gap: 6px;
+  padding: 16px 20px 0;
+}
+
+.macos-chrome span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.macos-chrome .dot-red    { background: #ff5f57; }
+.macos-chrome .dot-yellow { background: #febc2e; }
+.macos-chrome .dot-green  { background: #28c840; }
+
+/* --- Glass Button --- */
+
+.glass-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
+}
+
+.glass-btn:hover {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.2);
+  transform: translateY(-1px);
+}
+
+/* --- Glass Pill (lang switcher, tags) --- */
+
+.glass-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+/* --- Sticky Header --- */
+
+.glass-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
