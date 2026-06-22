@@ -300,3 +300,83 @@
   padding: 0 12px;
   flex-shrink: 0;
 }
+
+/* === ACHIEVEMENTS & PROJECTS === */
+
+.projects-section {
+  padding: 40px 0 60px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.project-card {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-icon {
+  font-size: 1.8rem;
+}
+
+.project-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.project-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.project-card .glass-pill {
+  font-size: 0.72rem;
+  padding: 3px 10px;
+}
+
+/* === CONTACT === */
+
+.contact-section {
+  padding: 40px 0 100px;
+}
+
+.contact-card {
+  padding: 56px 48px;
+  text-align: center;
+}
+
+.contact-title {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.contact-sub {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 36px;
+}
+
+.contact-cta {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
