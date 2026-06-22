@@ -10,6 +10,10 @@
           node.style.transitionDelay = (i * 0.2) + 's';
           node.classList.add('visible');
         });
+        var arrows = entry.target.querySelectorAll('.journey-arrow');
+        arrows.forEach(function (arrow) {
+          arrow.style.opacity = '1';
+        });
         observer.unobserve(entry.target);
       }
     });

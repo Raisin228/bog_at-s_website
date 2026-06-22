@@ -299,6 +299,8 @@
   color: var(--text-muted);
   padding: 0 12px;
   flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease 0.2s;
 }
 
 /* === ACHIEVEMENTS & PROJECTS === */
@@ -391,10 +393,6 @@
   .about-grid {
     grid-template-columns: 1fr;
   }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 767px) {
@@ -437,6 +435,10 @@
 
   .journey-node {
     width: 100%;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
   }
 
   .contact-card {
