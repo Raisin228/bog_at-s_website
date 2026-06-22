@@ -384,3 +384,67 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+/* === RESPONSIVE === */
+
+@media (max-width: 1023px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .content {
+    padding: 0 16px;
+  }
+
+  .hero-section {
+    padding: 40px 0 40px;
+  }
+
+  .hero-body {
+    padding: 20px 20px 0;
+  }
+
+  .hero-card {
+    padding: 0 0 28px;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  /* Journey: vertical on mobile */
+  .journey-nodes {
+    flex-direction: column;
+    padding: 20px;
+    gap: 8px;
+  }
+
+  .journey-arrow {
+    transform: rotate(90deg);
+    padding: 4px 0;
+  }
+
+  .journey-node {
+    width: 100%;
+  }
+
+  .contact-card {
+    padding: 40px 24px;
+  }
+
+  .contact-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+}
