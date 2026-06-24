@@ -37,13 +37,9 @@
 .lang-switcher {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
 }
 
-.lang-divider {
-  color: var(--text-muted);
-  font-size: 0.75rem;
-}
 
 /* === SECTION LABEL === */
 
@@ -92,10 +88,12 @@
   margin-bottom: 16px;
 }
 
-.hero-tagline {
-  font-size: 1rem;
+.hero-bio {
+  font-size: 0.95rem;
   color: var(--text-muted);
+  line-height: 1.65;
   margin-bottom: 32px;
+  max-width: 560px;
 }
 
 .hero-cta {
