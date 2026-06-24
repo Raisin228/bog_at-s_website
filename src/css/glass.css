@@ -1,75 +1,93 @@
-/* --- Glass Card --- */
+/* --- Card --- */
 
-.glass-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-  border: 1px solid var(--glass-border);
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
-  box-shadow: var(--glass-shadow);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.glass-card:hover {
-  border-color: rgba(255, 255, 255, 1);
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12), 0 0 20px rgba(160, 100, 255, 0.15);
+.card:hover {
+  border-color: var(--amber);
+  box-shadow: 0 0 0 3px var(--amber-glow),
+              0 4px 24px rgba(0, 0, 0, 0.06);
 }
 
-/* --- macOS Chrome Dots --- */
+/* --- Buttons --- */
 
-.macos-chrome {
-  display: flex;
-  gap: 6px;
-  padding: 16px 20px 0;
-}
-
-.macos-chrome span {
-  display: block;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-}
-
-.macos-chrome .dot-red    { background: #ff5f57; }
-.macos-chrome .dot-yellow { background: #febc2e; }
-.macos-chrome .dot-green  { background: #28c840; }
-
-/* --- Glass Button --- */
-
-.glass-btn {
+.btn-primary {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  background: var(--text);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-sm);
   padding: 12px 24px;
-  background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  border-radius: 50px;
-  font-size: 0.95rem;
+  font-size: 15px;
   font-weight: 500;
-  color: var(--text);
-  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
+  font-family: var(--font);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease;
 }
 
-.glass-btn:hover {
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.2);
-  transform: translateY(-1px);
+.btn-primary:hover {
+  background: #2a2a2a;
 }
 
-/* --- Glass Pill (lang switcher, tags) --- */
-
-.glass-pill {
+.btn-secondary {
   display: inline-flex;
   align-items: center;
-  padding: 6px 14px;
-  background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  gap: 8px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: var(--font);
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+
+/* --- Icon Box --- */
+
+.icon-box {
+  width: 40px;
+  height: 40px;
+  background: #f3f2ef;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  flex-shrink: 0;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover .icon-box {
+  background: rgba(201, 106, 0, 0.06);
+  border-color: rgba(201, 106, 0, 0.3);
+}
+
+/* --- Tag Pill --- */
+
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  background: #f3f2ef;
+  border: 1px solid var(--border);
   border-radius: 50px;
-  font-size: 0.8rem;
+  font-size: 11px;
   font-weight: 500;
   color: var(--text-muted);
 }
@@ -80,8 +98,31 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(250, 249, 247, 0.95);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* --- Lang Switcher --- */
+
+.lang-btn {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 2px 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font);
+  transition: color 0.2s ease;
+}
+
+.lang-btn.active {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.lang-btn:hover:not(.active) {
+  color: var(--amber);
 }
